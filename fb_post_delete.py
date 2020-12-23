@@ -27,7 +27,19 @@ email_input.send_keys(emaill)
 pass_input.send_keys(pwdd)
 login_button.click()
 
-time.sleep(30)      # my facebook account does have TFA , i need this time to have the permission done!
+time.sleep(40)      # my facebook account does have TFA , i need this time to have the permission done!
+
+messenger = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/span/div/div[1]")
+messenger.click()
+time.sleep(10)
+
+three_dots = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]/div/div/div/div/div/div/div[1]/div/div[1]/div[1]/div[1]/div[2]/div[1]/span/div")
+three_dots.click()
+time.sleep(10)
+
+pop_off = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div[3]/div[3]/div[2]/div[2]/div/input")
+pop_off.click()
+time.sleep(5)
 
 for i in range(n):
     test_driver.get(username+"allactivity?category_key=STATUSCLUSTER&filter_hidden=ALL&filter_privacy=NONE")
@@ -45,33 +57,58 @@ for i in range(n):
     time.sleep(10)
 
     try:
-        delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div/div[4]")
-        delete.click()
 
-        time.sleep(5)
+        try:
+            delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div/div[4]")
+            delete.click()
 
-        full_delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[1]/div[1]")
-        full_delete.click()
+
+            time.sleep(5)
+
+            full_delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[1]/div[1]")
+            full_delete.click()
+
+
+        except:
+
+
+            cut_click = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/div[2]/div")
+            cut_click.click()
+
+            time.sleep(5)
+
+
+            main_post = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[3]/div")
+            main_post.click()
+
+            time.sleep(10)
+
+            delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div/div[5]")
+            delete.click()
+
+
+            time.sleep(5)
+
+            full_delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[1]/div[1]")
+            full_delete.click()
+
 
     except:
 
-        cut_click = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/div[2]/div")
-        cut_click.click()
-
-        time.sleep(5)
 
         main_post = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[3]/div")
         main_post.click()
 
         time.sleep(10)
 
-        delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div/div[5]")
+        delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div[1]/div/div[1]/div/div[3]")
         delete.click()
 
         time.sleep(5)
 
         full_delete = test_driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[1]/div[1]")
         full_delete.click()
+
 
     time.sleep(15)
 
